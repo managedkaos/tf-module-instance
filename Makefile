@@ -26,6 +26,9 @@ black:
 test:
 	python -m unittest --verbose --failfast
 
+image-test: build
+	docker run -v $(PWD)/samples:/data $(APP):$(TAG) /data/vpc_variables.tf vpc "./modules/vpc"
+
 build: pip lint
 	docker build --tag $(APP):$(TAG) .
 
