@@ -2,6 +2,8 @@ import re
 import sys
 import os.path
 
+# TODO: switch to hcl2 library
+
 
 def parse_terraform_variable(var_block):
     """Parse a single Terraform variable block and extract its properties."""

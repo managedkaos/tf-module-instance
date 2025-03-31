@@ -27,7 +27,8 @@ test:
 	python -m unittest --verbose --failfast
 
 image-test: build
-	docker run -v $(PWD)/samples:/data $(APP):$(TAG) /data/vpc_variables.tf vpc "./modules/vpc"
+	docker run -v $(PWD)/samples:/data $(APP):$(TAG) /data/vpc_variables.tf vpc "../modules/vpc"
+	docker run -v $(PWD)/samples:/data $(APP):$(TAG) /data/aws_security_hub_variables.tf aws_sec_hub "../modules/aws_sec_hub"
 
 build: pip lint
 	docker build --tag $(APP):$(TAG) .
