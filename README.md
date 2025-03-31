@@ -15,7 +15,7 @@ docker run -v $(pwd):/data tf-module-instance:main /data/variables.tf MODULE_INS
 
 **Input**: `variables.tf`
 
-```hcl
+```js
 variable "vpc_id" {
   type = string
 }
@@ -61,7 +61,7 @@ docker run -v $(pwd):/data ghcr.io/managedkaos/tf-module-instance:fe46190 /data/
 
 **Output**: `main.tf`
 
-```hcl
+```js
 module "vpc" {
   source = "./modules/vpc"
   vpc_id = "" # Needs to be defined
