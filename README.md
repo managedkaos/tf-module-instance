@@ -56,7 +56,7 @@ variable "subnets_desired_count" {
 **Command**:
 
 ```bash
-docker run -v $(pwd):/data tf-module-instance:main /data/variables.tf vpc "./modules/vpc" | tee main.tf
+docker run -v $(pwd):/data ghcr.io/managedkaos/tf-module-instance:fe46190 /data/variables.tf vpc "./modules/vpc" | tee main.tf
 ```
 
 **Output**: `main.tf`
